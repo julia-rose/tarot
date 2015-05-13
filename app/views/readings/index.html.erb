@@ -1,0 +1,7 @@
+<h1>Listing readings</h1>
+
+<ul>
+	<% @readings.each do |reading| %>
+		<li><%= reading.topic %> - <%= reading.created_at %></li>
+	<% end %>
+</ul>

@@ -11,20 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511180401) do
+ActiveRecord::Schema.define(version: 20150513175433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "name"
+    t.string  "arcana"
+    t.string  "suit"
+    t.integer "value"
+    t.string  "nouns",   default: [], array: true
+    t.string  "actions", default: [], array: true
   end
 
-  create_table "readings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "placements", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "reading_id"
+    t.string  "position"
   end
+
+  add_index "placements", ["card_id"], name: "index_placements_on_card_id", using: :btree
+  add_index "placements", ["reading_id"], name: "index_placements_on_reading_id", using: :btree
+
+  create_table "readings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "topic"
+    t.string   "notes",      default: [], array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "readings", ["user_id"], name: "index_readings_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

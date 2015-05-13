@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
+  resources :cards, only: [:index, :show]
+  resource :user, only: [:index, :show] do
+    resources :readings
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
