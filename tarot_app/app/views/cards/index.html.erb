@@ -1,0 +1,7 @@
+<h1>Listing all cards</h1>
+
+<ul>
+	<% @cards.each do |card| %>
+		<li><%= link_to "#{card.name}", card_path(card) %></li>
+	<% end %>
+</ul>
