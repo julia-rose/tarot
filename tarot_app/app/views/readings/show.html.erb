@@ -1,0 +1,27 @@
+<h1><%= @reading.topic %></h1>
+
+<div class="show_reading">
+	<ul>
+		<% @placements.each do |placement| %>
+			<% @card = Card.find(placement.card_id) %>
+
+				<li class="item">
+
+					<%= render "shared/card" %> 
+					<div class="info">
+						<% @card.nouns.each do |noun| %>
+							<p><%= noun %></p>
+						<% end %>
+
+						<% @card.actions.each do |action| %>
+							<p><%= action %></p>
+						<% end %>
+
+						<button type="button" class="next">Next card.</button>
+					</div> <!-- end of card info div -->
+
+				</li> <!-- end of specific card rendering code -->
+
+		<% end %>
+	</ul>
+</div>

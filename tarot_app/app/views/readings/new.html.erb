@@ -1,0 +1,10 @@
+<h1>New reading</h1>
+
+<p>Ok so enter a topic or something:</p>
+
+
+
+<%= form_for @reading, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%= f.text_field :topic %>
+  <%= f.submit "Submit" %>
+<% end %>

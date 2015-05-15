@@ -1,0 +1,15 @@
+body {
+	font-family: 'IM Fell DW Pica', serif;
+}
+
+h1 {
+	font-family: 'IM Fell DW Pica SC', serif;
+}
+
+.item {
+	display: none;
+}
+
+.current {
+	display: block;
+}

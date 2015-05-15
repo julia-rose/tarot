@@ -1,7 +1,11 @@
-<h1>Listing all cards</h1>
+<h1>Listing All Cards</h1>
 
-<ul>
+<ul class="card_list_container">
 	<% @cards.each do |card| %>
-		<li><%= link_to "#{card.name}", card_path(card) %></li>
+		<li class="card_list"><%= link_to "#{card.name}", card_path(card) %></li>
 	<% end %>
 </ul>
+
+<%= image_tag("img_" + "#{@cards.sample.id}" + ".jpg", class: "hero") %>
+<%= image_tag("img_" + "#{@cards.sample.id}" + ".jpg", class: "name_detail") %>
+<%= image_tag("img_" + "#{@cards.sample.id}" + ".jpg", class: "image_detail") %>
