@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
 gem 'pry', group: :development
 gem 'devise'
 gem 'rails_12factor', group: :production

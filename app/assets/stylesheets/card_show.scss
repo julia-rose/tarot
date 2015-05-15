@@ -1,0 +1,73 @@
+h1 {
+	font-size: 100px;
+	padding: 10px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 25px;
+	text-align: center;
+}
+
+.info {
+	width: 500px;
+	position: relative;
+	margin: 0 auto;
+	padding: 25px;
+	border-radius: 15px;
+	background-color: rgba(0,0,0,0.4);
+
+	.next,
+	.back_button {
+		position: absolute;
+		right: 25px;
+		bottom: 15px;
+		background: transparent;
+		border: none;
+		margin: none;
+		color: white;
+		font-family: 'IM Fell DW Pica';
+		font-size: 18px;
+		font-style: italic;
+		font-weight: normal;
+
+		&:hover{
+			color: #aba9a9
+		}
+
+	}
+}
+
+
+.hero {
+	z-index: -1;
+	position: absolute;
+	top: -150px;
+	width: 60%;
+}
+
+.name_detail {
+	z-index: -2;
+	position: absolute;
+	width: 40%;
+	top: -500px;
+	right: 0px;
+}
+
+.image_detail {
+	z-index: -3;
+	position: absolute;
+	bottom: -1000px;
+	right: -400px;
+}
+
+/* for browser widths 800px or less */
+ @media (max-width: 800px) {
+
+	.hero {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	}
+	
+}
