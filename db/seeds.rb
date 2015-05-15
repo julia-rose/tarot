@@ -93,6 +93,8 @@ deck.each do |name, arcana, suit, value, nouns, actions|
   Card.create( name: name, arcana: arcana, suit: suit, value: value, nouns: nouns, actions: actions )
 end
 
+@me = Witch.create(name: "Neutral Witch")
+
 
 
 
