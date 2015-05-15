@@ -19,7 +19,7 @@ class ReadingsController < ApplicationController
 		@deck = Card.all.shuffle.take(10)
 
 		@deck.each_with_index do |card, index|
-			@reading.placements.create(card_id: card.id, position: (index + 1))
+			@reading.placements.create(card_id: card.id, position: (index + 1), witch_id: 1)
 		end
 
 		redirect_to user_reading_path(@reading)

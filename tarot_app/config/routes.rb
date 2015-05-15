@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :cards, only: [:index, :show]
+  resources :witches, only: [:index, :show]
   resource :user, only: [:index, :show] do
     resources :readings
   end
