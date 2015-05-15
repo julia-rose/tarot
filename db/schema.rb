@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513175433) do
+ActiveRecord::Schema.define(version: 20150515104743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,13 @@ ActiveRecord::Schema.define(version: 20150513175433) do
   create_table "placements", force: :cascade do |t|
     t.integer "card_id"
     t.integer "reading_id"
+    t.integer "witch_id"
     t.string  "position"
   end
 
   add_index "placements", ["card_id"], name: "index_placements_on_card_id", using: :btree
   add_index "placements", ["reading_id"], name: "index_placements_on_reading_id", using: :btree
+  add_index "placements", ["witch_id"], name: "index_placements_on_witch_id", using: :btree
 
   create_table "readings", force: :cascade do |t|
     t.integer  "user_id"
@@ -61,5 +63,11 @@ ActiveRecord::Schema.define(version: 20150513175433) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "witches", force: :cascade do |t|
+    t.string "name"
+    t.text   "scripts",       default: [], array: true
+    t.string "witch_zingers", default: [], array: true
+  end
 
 end

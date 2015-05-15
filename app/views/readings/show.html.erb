@@ -1,27 +1,32 @@
-<h1><%= @reading.topic %></h1>
+<div class="spacer">
+</div>
 
-<div class="show_reading">
-	<ul>
-		<% @placements.each do |placement| %>
-			<% @card = Card.find(placement.card_id) %>
+<div id="container" class="stay_down_dammit">
+	<div class="show_reading">
+		<ul>
+			<% @placements.each do |placement| %>
+				<% @card = Card.find(placement.card_id) %>
+				<% @witch = Witch.find(placement.witch_id) %>
 
-				<li class="item">
+					<li class="item">
+						<%= render "shared/card" %> 
+						<div class="info">
+							<h2><%= @card.name %></h2>
+							
+							<% @card.nouns.each do |noun| %>
+								<p><%= noun %></p>
+							<% end %>
 
-					<%= render "shared/card" %> 
-					<div class="info">
-						<% @card.nouns.each do |noun| %>
-							<p><%= noun %></p>
-						<% end %>
+							<% @card.actions.each do |action| %>
+								<p><%= action %></p>
+							<% end %>
 
-						<% @card.actions.each do |action| %>
-							<p><%= action %></p>
-						<% end %>
+							<button type="button" class="button next-button">Next card.</button>
+						</div> <!-- end of card info div -->
 
-						<button type="button" class="next">Next card.</button>
-					</div> <!-- end of card info div -->
+					</li> <!-- end of specific card rendering code -->
 
-				</li> <!-- end of specific card rendering code -->
-
-		<% end %>
-	</ul>
+			<% end %>
+		</ul>
+	</div>
 </div>

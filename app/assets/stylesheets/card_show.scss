@@ -1,23 +1,40 @@
 h1 {
 	font-size: 100px;
-	padding: 10px;
 	text-align: center;
 }
 
 h2 {
-	font-size: 25px;
+	font-size: 45px;
 	text-align: center;
 }
 
-.info {
+.spacer {
+	display: block;
+	height: 70px;
+}
+
+#container {     
+  width:100%; 
+  height:100%;
+}
+
+div.stay_down_dammit {
+  position:absolute; 
+  z-index:-1;
+}
+
+.info,
+.content {
 	width: 500px;
 	position: relative;
 	margin: 0 auto;
 	padding: 25px;
 	border-radius: 15px;
 	background-color: rgba(0,0,0,0.4);
+	text-align: center;
+	z-index: 1;
 
-	.next,
+	.button,
 	.back_button {
 		position: absolute;
 		right: 25px;
@@ -38,24 +55,32 @@ h2 {
 	}
 }
 
+.shadow {
+	position: absolute;
+	top: -200px;
+	height: 1500px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: -1;
+}
 
 .hero {
-	z-index: -1;
+	z-index: -2;
 	position: absolute;
 	top: -150px;
 	width: 60%;
 }
 
 .name_detail {
-	z-index: -2;
+	z-index: -3;
 	position: absolute;
 	width: 40%;
-	top: -500px;
+	top: -700px;
 	right: 0px;
 }
 
 .image_detail {
-	z-index: -3;
+	z-index: -4;
 	position: absolute;
 	bottom: -1000px;
 	right: -400px;
@@ -64,10 +89,24 @@ h2 {
 /* for browser widths 800px or less */
  @media (max-width: 800px) {
 
+ 	#container {
+ 		position: absolute;
+ 		top: 0;
+ 	}
+
 	.hero {
-	position: absolute;
-	top: 0;
-	width: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.info {
+		position: relative;
+		top: 150px;
+		width: 80%;
+		margin: 0 auto;
+
+
 	}
 	
 }
