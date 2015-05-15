@@ -1,0 +1,9 @@
+<h1>readings</h1>
+
+<div class="content">
+	<ul>
+		<% @readings.each do |reading| %>
+			<li><%= link_to "#{reading.topic}", user_reading_path(reading) %> - <%= reading.created_at %></li>
+		<% end %>
+	</ul>
+</div>

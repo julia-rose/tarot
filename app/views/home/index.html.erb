@@ -1,0 +1,13 @@
+<h1 class="main_title">clairvoyant</h1>
+
+<div class="content">
+	<% if user_signed_in? %>
+		<ul>
+	  	<li><%= link_to "new reading", new_user_reading_path %></li>
+	 		<li><%= link_to "past readings", user_readings_path %></li>
+	 		<li><%= link_to "browse all cards", cards_path %></li>
+	 	</ul>
+	<% else %>
+	  <p>Sign in to see the content of this page, fool!</p>
+	<% end %>
+</div>

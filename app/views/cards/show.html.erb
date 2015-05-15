@@ -1,0 +1,25 @@
+<div class="spacer">
+</div>
+
+<div id="container" class="stay_down_dammit">
+	<div class="show_reading">
+		<ul>
+					<li class="item">
+						<%= render "shared/card" %> 
+						<div class="info">
+							<h2><%= @card.name %></h2>
+							<% @card.nouns.each do |noun| %>
+								<p><%= noun %></p>
+							<% end %>
+
+							<% @card.actions.each do |action| %>
+								<p><%= action %></p>
+							<% end %>
+
+							<p><%=link_to 'back', cards_path, class: "button" %></p>
+						</div> <!-- end of card info div -->
+
+					</li> <!-- end of specific card rendering code -->
+		</ul>
+	</div>
+</div>

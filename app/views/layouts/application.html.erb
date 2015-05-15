@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>clairvoyant</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400,400italic' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="wrapper">
+      <div id="column1" class="columns">
+        <%= image_tag("img_3.jpg", class: "column_image") %>
+      </div>
+
+      <div id="column2" class="columns">
+        <%= image_tag("img_5.jpg", class: "column_image") %>
+      </div>
+
+      <div id="column3" class="columns">
+        <%= image_tag("img_14.jpg", class: "column_image") %>
+      </div>
+
+      <div id="column4" class="columns">
+        <%= image_tag("img_7.jpg", class: "column_image") %>
+      </div>
+
+      <div id="column5" class="columns">
+        <%= image_tag("img_8.jpg", class: "column_image") %>
+      </div>
+
+      <div class="shadow"></div>
+
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+      <p class="navbar-text pull-right">
+        <% if user_signed_in? %>
+          logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= link_to "sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "login", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
+
+       <%= yield %>
+
+       <p class="home-button"><%= link_to "home", root_path %></p>
+
+
+  </div>
+
+</body>
+</html>

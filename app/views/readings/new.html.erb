@@ -1,0 +1,12 @@
+<h1>new reading</h1>
+
+<div class="content">
+	<p>enter the subject you'd like to investigate during this reading.</p>
+	<p>a word, a question... whatever is on your mind.</p>
+	<div class="spacer"></div>
+
+	<%= form_for @reading, url: {action: "create"}, html: {class: "form"} do |f| %>
+	  <%= f.text_field :topic %>
+	  <%= f.submit "submit", class: "button" %>
+	<% end %>
+</div>

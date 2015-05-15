@@ -1,0 +1,42 @@
+.main_title {
+	z-index: 3;
+}
+
+.content {
+	z-index: 2;
+}
+
+.columns {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 20%;
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+
+	img{
+		max-width: 400px;
+	}
+}
+
+
+#column1 {
+}
+
+#column2 {
+	left: 20%;
+}
+
+#column3 {
+	left: 40%;
+}
+
+#column4 {
+	left: 60%;
+}
+
+#column5 {
+	left: 80%;
+}
+
